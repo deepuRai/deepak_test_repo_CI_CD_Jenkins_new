@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deepak-app
+  labels:
+    app: deepak
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deepak
+  template:
+    metadata:
+      labels:
+        app: deepak
+    spec:
+      containers:
+      - name: deepak-app
+        image: deepak-test:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
