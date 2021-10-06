@@ -41,7 +41,7 @@ pipeline {
  
         stage('Test image') {
             steps {
-                bat 'docker run -i ' + dockerhuburl + ':$BUILD_NUMBER npm test'
+                bat 'docker run -i ' + dockerhuburl + ':${env.BUILD_NUMBER} npm test'
             }
         }
  
