@@ -41,7 +41,7 @@ pipeline {
  
         stage('Test image') {
             steps {
-                 winpty "docker run -i -i -p 3000:3000 $dockerhuburl npm test"
+                 bat "docker run -p 3000:3000 $dockerhuburl npm test"
             }
         }
  
