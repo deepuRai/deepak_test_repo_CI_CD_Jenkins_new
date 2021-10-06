@@ -34,14 +34,14 @@ pipeline {
         stage('Build image') {
           steps{
             script {
-              dockerImage = docker.build(dockerhuburl)
+              dockerImage = docker.build(dockerhuburl + ":$BUILD_NUMBER")
             }
           }
         }
  
         stage('Test image') {
             steps {
-                 bat "docker run -i -p 3000:3000 -t raideepu/deepak-test1 npm test"
+                 bat "docker run -i -i -p 3000:3000 $dockerhuburl:$BUILD_NUMBER npm test"
             }
         }
  
