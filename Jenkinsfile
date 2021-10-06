@@ -41,7 +41,7 @@ pipeline {
  
         stage('Test image') {
             steps {
-                bat 'docker run -i (' + dockerhuburl + ':$BUILD_NUMBER) npm test'
+                 'docker run -i -p 3000:3000 -t deepak-test1:$BUILD_NUMBER npm test'
             }
         }
  
