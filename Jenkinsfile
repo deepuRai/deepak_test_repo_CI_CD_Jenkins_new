@@ -41,7 +41,7 @@ pipeline {
  
         stage('Test image') {
             steps {
-                 'docker.run -i -p 3000:3000 -t raideepu/deepak-test1 npm test'
+                 bat "docker run -i -p 3000:3000 -t raideepu/deepak-test1 npm test"
             }
         }
  
