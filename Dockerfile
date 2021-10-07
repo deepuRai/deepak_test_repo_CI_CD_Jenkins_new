@@ -7,9 +7,8 @@ RUN apt-get update \
 COPY package*.json ./
 RUN npm -g config set user root
 RUN npm -g install mocha
-RUN npm -g config set user root
 RUN npm -g install chai
-RUN npm install --production
+RUN npm install 
 COPY . /app
 ENV PORT 3000
 EXPOSE 3000
