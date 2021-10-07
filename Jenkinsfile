@@ -41,7 +41,7 @@ pipeline {
  
         stage('Test image') {
             steps {
-                 bat "docker run -p 3000:3000 $dockerhuburl npm test"
+                 bat "npm i -g mocha docker run -p 3000:3000 $dockerhuburl npm test"
             }
         }
  
