@@ -1,5 +1,5 @@
 var expect  = require('chai').expect;
-var request = require('request');
+
 const assert = require("assert");
 
 describe("smoke test", function() {
